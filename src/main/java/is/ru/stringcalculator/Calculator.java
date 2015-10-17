@@ -7,7 +7,15 @@ public class Calculator {
 			return 0;
 		}
 		else if(text.startsWith("//")){
-			String delim = text.substring(2,3);
+			String delim = "";
+			if(text.startsWith("//[")) {
+			delim = text.substring(2,text.indexOf("]"));
+			}
+			else {
+				delim = text.substring(2,3);
+			}
+			//* is reserved for regex, so we need to escape it
+			delim = delim.replaceAll("\\*","\\\\*");
 			return sum(text.substring(4).split(delim));
 		}
 		else if(text.contains(",") || text.contains("\n")){
