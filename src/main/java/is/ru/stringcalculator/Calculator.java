@@ -6,6 +6,10 @@ public class Calculator {
 		if(text.equals("")){
 			return 0;
 		}
+		else if(text.startsWith("//")){
+			String delim = text.substring(2,3);
+			return sum(text.substring(4).split(delim));
+		}
 		else if(text.contains(",") || text.contains("\n")){
 			return sum(splitNumbers(text));
 		}
