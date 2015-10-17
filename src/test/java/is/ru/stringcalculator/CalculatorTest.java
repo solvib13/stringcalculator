@@ -50,6 +50,11 @@ public class CalculatorTest {
 		}
   	assertTrue(e instanceof IndexOutOfBoundsException);
 	} */
+	
+	@Test
+    	public void testLargeNumber(){
+    		assertEquals(2, Calculator.add("1001,2"));
+    	}
 
 	
 }

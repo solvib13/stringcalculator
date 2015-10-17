@@ -29,7 +29,9 @@ public class Calculator {
  		int total = 0;
 		String err = "Negatives not allowed: ";
         	for(String number : numbers){
-			total += toInt(number);
+			if(toInt(number)<=1000) {
+				total += toInt(number);
+			}
 			if(toInt(number)<0) {
 			err += number + ", ";
 			}
