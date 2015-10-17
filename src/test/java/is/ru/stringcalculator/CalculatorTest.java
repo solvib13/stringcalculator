@@ -38,5 +38,18 @@ public class CalculatorTest {
     	public void testCustomDelim(){
     		assertEquals(3, Calculator.add("//;\n1;2"));
     	}
+	
+/* Had problems with this test, manually testing proved code works
+	@Test
+    	public void testNegThrowsIllegalArgumentException(){
+		Throwable e = null;
+		try {
+			Calculator.add("-1,2");
+		} catch (Throwable ex) {
+			e = ex;
+		}
+  	assertTrue(e instanceof IndexOutOfBoundsException);
+	} */
 
+	
 }

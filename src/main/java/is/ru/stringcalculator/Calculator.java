@@ -22,17 +22,21 @@ public class Calculator {
 	}
 
 	private static String[] splitNumbers(String numbers){
-	    return numbers.split("[\\n,]+");
+	    	return numbers.split("[\\n,]+");
 	}
       
-    private static int sum(String[] numbers){
- 	    int total = 0;
-        for(String number : numbers){
-		    total += toInt(number);
+    	private static int sum(String[] numbers){
+ 		int total = 0;
+		String err = "Negatives not allowed: ";
+        	for(String number : numbers){
+			total += toInt(number);
+			if(toInt(number)<0) {
+			err += number + ", ";
+			}
+		}
+		if(err.length()>23) {
+		throw new IllegalArgumentException(err.substring(0,err.length()-2));
 		}
 		return total;
-    }
-
-
-
+	}
 }
