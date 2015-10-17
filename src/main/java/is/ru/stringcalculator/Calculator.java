@@ -37,7 +37,7 @@ public class Calculator {
 			}
 		}
 		if(err.length()>23) {
-		throw new IllegalArgumentException(err.substring(0,err.length()-2));
+			throw new IllegalArgumentException(err.substring(0,err.length()-2));
 		}
 		return total;
 	}

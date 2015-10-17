@@ -48,7 +48,7 @@ public class CalculatorTest {
 		} catch (Throwable ex) {
 			e = ex;
 		}
-  	assertTrue(e instanceof IndexOutOfBoundsException);
+  	assertTrue(e instanceof IllegalArgumentException);
 	} */
 	
 	@Test
